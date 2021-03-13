@@ -18,4 +18,23 @@ window.onload = () => {
         referContainer.style.transform = 'translateX(-100%)';
     }
 
+
+    const shuffleBox = document.querySelector('.shuffle-box');
+
+    const shuffleContainer = document.querySelector('.food-shuffle-container');
+
+
+    shuffleBox.onclick = () =>{
+        shuffleContainer.style.display = 'flex';
+
+        setTimeout(() => {
+            shuffleContainer.style.transform = 'translateY(20%)';
+        },10);
+    }
+
+
+
+
+
 }
+
