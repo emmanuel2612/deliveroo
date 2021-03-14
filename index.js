@@ -1,11 +1,11 @@
 window.onload = () => {
 
-    setTimeout(() => {
+   /* setTimeout(() => {
         const splashScreen = document.querySelector('.splash-screen');
         splashScreen.style.display = 'none';
         document.body.style.overflowY = 'scroll';
         console.log("hello");
-    }, 2500);
+    }, 2500);*/
 
 
     const referContainer = document.querySelector('.refer-container');
@@ -28,7 +28,7 @@ window.onload = () => {
         shuffleContainer.style.display = 'flex';
 
         setTimeout(() => {
-            shuffleContainer.style.transform = 'translateY(20%)';
+            shuffleContainer.style.transform = 'translateY(0%)';
         },10);
     }
 
