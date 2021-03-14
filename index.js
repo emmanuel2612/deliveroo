@@ -8,6 +8,28 @@ window.onload = () => {
     }, 2500);*/
 
 
+    // Global Elements
+
+    const headerClose = document.querySelector('.header-close');
+    const menuButton = document.querySelector('.menu');
+
+    // Global Functions
+
+    const hideMenu = () => {
+        menuButton.style.display = 'none';
+        headerClose.style.display = 'block';
+    }
+
+    const showMenu = () => {
+        menuButton.style.display = 'flex';
+        headerClose.style.display = 'none';
+        document.body.style.overflowY = 'scroll';
+    }
+
+
+
+
+    // Refer Friend - Show & Close
     const referContainer = document.querySelector('.refer-container');
     setTimeout(() => {
         referContainer.style.transform = 'translateX(0%)';
@@ -19,6 +41,8 @@ window.onload = () => {
     }
 
 
+    // Food Generator
+
     const shuffleBox = document.querySelector('.shuffle-box');
 
     const shuffleContainer = document.querySelector('.food-shuffle-container');
@@ -27,10 +51,34 @@ window.onload = () => {
     shuffleBox.onclick = () =>{
         shuffleContainer.style.display = 'flex';
 
+        hideMenu();
+
         setTimeout(() => {
             shuffleContainer.style.transform = 'translateY(0%)';
         },10);
+
+        headerClose.onclick = () => {
+            shuffleContainer.style.transform = 'translateY(100%)';
+            showMenu();
+        }
+
+        document.body.style.overflowY = 'hidden';
+   
+
     }
+
+    
+
+
+
+
+
+
+
+
+
+
+
 
 
 
