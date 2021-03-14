@@ -24,6 +24,7 @@ window.onload = () => {
         menuButton.style.display = 'flex';
         headerClose.style.display = 'none';
         document.body.style.overflowY = 'scroll';
+        document.documentElement.style.overflowY = 'scroll';
     }
 
 
@@ -63,6 +64,7 @@ window.onload = () => {
         }
 
         document.body.style.overflowY = 'hidden';
+        document.documentElement.style.overflowY = 'hidden';
    
 
     }
