@@ -53,15 +53,13 @@ window.onload = () => {
 
         hideMenu();
 
-        setTimeout(() => {
-            shuffleContainer.style.transform = 'translateY(0%)';
-        }, 10);
 
         headerClose.onclick = () => {
-            shuffleContainer.style.transform = 'translateY(100%)';
             showMenu();
 
             document.body.style.overflowY = 'scroll';
+
+            shuffleContainer.style.display = 'none';
 
         }
 
