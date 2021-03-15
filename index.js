@@ -254,8 +254,30 @@ window.onload = () => {
 
 
 
+    // Change loading text 
+
+    const loadingText = ["'Ridin round town", "Checkin' out options", "Lookin' around"];
+    let counter = 0;
+    const loadingTextElement = document.querySelector('.loading-text');
 
 
+    const change = () => {
+        loadingTextElement.classList.add('hide');
+
+        setTimeout(() => {
+            loadingTextElement.innerHTML = loadingText[counter];
+            loadingTextElement.classList.remove('hide');
+            counter++;
+
+            if (counter >= loadingText.length){
+                counter = 0;
+            }
+            
+        }, 500);
+    }
+
+    setInterval(change, 2500);
+    
 
 
 
