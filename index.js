@@ -23,7 +23,7 @@ window.onload = () => {
     const showMenu = () => {
         menuButton.style.display = 'flex';
         headerClose.style.display = 'none';
-        document.documentElement.style.overflowY = 'scroll';
+      
     }
 
 
@@ -62,9 +62,11 @@ window.onload = () => {
             showMenu();
 
             document.body.style.overflowY = 'scroll';
+
         }
 
-        document.body.style.overflowY = 'hidden';
+
+        document.body.style.overflow = 'hidden';
 
 
 
