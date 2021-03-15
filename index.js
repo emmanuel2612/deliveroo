@@ -224,7 +224,7 @@ window.onload = () => {
 
             setTimeout(() => {
                 barContainer.style.opacity = '0';
-                foodShuffleContainer.style.paddingBottom = '0';
+                foodShuffleContainer.style.paddingBottom = '55.9px';
 
             }, 20);
 
