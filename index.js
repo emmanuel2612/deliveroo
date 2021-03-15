@@ -1,11 +1,11 @@
 window.onload = () => {
 
-     setTimeout(() => {
-         const splashScreen = document.querySelector('.splash-screen');
-         splashScreen.style.display = 'none';
-         document.body.style.overflowY = 'scroll';
-         console.log("hello");
-     }, 2500);
+    setTimeout(() => {
+        const splashScreen = document.querySelector('.splash-screen');
+        splashScreen.style.display = 'none';
+        document.body.style.overflowY = 'scroll';
+        console.log("hello");
+    }, 2500);
 
 
     // Global Elements
@@ -23,7 +23,7 @@ window.onload = () => {
     const showMenu = () => {
         menuButton.style.display = 'flex';
         headerClose.style.display = 'none';
-      
+
     }
 
 
@@ -134,13 +134,18 @@ window.onload = () => {
     const questionBoxOne = document.querySelector('#question-box-1');
     const questionBoxTwo = document.querySelector('#question-box-2');
     const questionBoxThree = document.querySelector('#question-box-3');
+    const questionBoxContainer = document.querySelector('.question-box-container');
 
     const quizOptionOne = document.querySelectorAll('.quiz-option-1');
     const quizOptionTwo = document.querySelectorAll('.quiz-option-2');
     const quizOptionThree = document.querySelectorAll('.quiz-option-3');
 
+    const bar = document.querySelector(".progress");
+    const barContainer = document.querySelector(".progress-container");
+    const shuffleLoadingContainer = document.querySelector('.shuffle-loading-container');
 
-    
+
+
 
 
 
@@ -157,14 +162,13 @@ window.onload = () => {
 
             questionBoxTwo.style.transform = "translateX(-100%)";
 
-        var width = 10;
+            var width = 10;
 
-        const bar = document.querySelector(".progress");
-        if (width < 100) {
-            width += 30;
-            bar.style.width = width + '%';
+            if (width < 100) {
+                width += 30;
+                bar.style.width = width + '%';
 
-        }
+            }
         }
 
     }
@@ -183,17 +187,54 @@ window.onload = () => {
 
             var width = 40;
 
-        const bar = document.querySelector(".progress");
-        if (width < 100) {
-            width += 30;
-            bar.style.width = width + '%';
+            if (width < 100) {
+                width += 30;
+                bar.style.width = width + '%';
 
-        }
+            }
         }
 
     }
 
-   
+    for (let index = 0; index < quizOptionThree.length; index++) {
+
+
+        quizOptionThree[index].onclick = () => {
+
+            questionBoxThree.style.transform = "translateX(-300%)";
+            questionBoxContainer.style.transform = "translateX(-300%)";
+
+            setTimeout(() => {
+                questionBoxThree.style.opacity = "0";
+            }, 20);
+
+
+            setTimeout(() => {
+                shuffleLoadingContainer.style.display = 'flex';
+                shuffleLoadingContainer.style.height = '100%';
+                shuffleLoadingContainer.style.flexDirection = 'column';
+                shuffleLoadingContainer.style.alignItems = 'center';
+                shuffleLoadingContainer.style.justifyContent = 'center';
+            }, 300);
+
+            setTimeout(() => {
+                barContainer.style.opacity = '0';
+            }, 20);
+
+
+            var width = 70;
+
+            if (width < 100) {
+                width += 30;
+                bar.style.width = width + '%';
+
+            }
+        }
+
+    }
+
+
+
 
 
 
