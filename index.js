@@ -147,6 +147,8 @@ window.onload = () => {
 
     const foodShuffleHeader = document.querySelector('.food-shuffle-header');
 
+    const restaurantPage = document.querySelector('.restaurant-page');
+
 
 
 
@@ -223,6 +225,12 @@ window.onload = () => {
             }, 500);
 
             setTimeout(() => {
+                shuffleLoadingContainer.style.display = 'none';
+                restaurantPage.style.display = 'block';
+            }, 5000);
+        
+
+            setTimeout(() => {
                 barContainer.style.opacity = '0';
                 foodShuffleContainer.style.paddingBottom = '0';
 
@@ -236,10 +244,6 @@ window.onload = () => {
                 barContainer.style.display = 'none';
             }, 300);
 
-           
-
-            
-
 
             var width = 70;
 
@@ -251,6 +255,8 @@ window.onload = () => {
         }
 
     }
+
+    
 
 
 
