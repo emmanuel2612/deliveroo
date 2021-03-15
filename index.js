@@ -135,6 +135,7 @@ window.onload = () => {
     const questionBoxTwo = document.querySelector('#question-box-2');
     const questionBoxThree = document.querySelector('#question-box-3');
     const questionBoxContainer = document.querySelector('.question-box-container');
+    const foodShuffleContainer = document.querySelector('.food-shuffle-container');
 
     const quizOptionOne = document.querySelectorAll('.quiz-option-1');
     const quizOptionTwo = document.querySelectorAll('.quiz-option-2');
@@ -143,6 +144,8 @@ window.onload = () => {
     const bar = document.querySelector(".progress");
     const barContainer = document.querySelector(".progress-container");
     const shuffleLoadingContainer = document.querySelector('.shuffle-loading-container');
+
+    const foodShuffleHeader = document.querySelector('.food-shuffle-header');
 
 
 
@@ -215,11 +218,27 @@ window.onload = () => {
                 shuffleLoadingContainer.style.flexDirection = 'column';
                 shuffleLoadingContainer.style.alignItems = 'center';
                 shuffleLoadingContainer.style.justifyContent = 'center';
-            }, 300);
+
+
+            }, 500);
 
             setTimeout(() => {
                 barContainer.style.opacity = '0';
+                foodShuffleContainer.style.paddingBottom = '0';
+
             }, 20);
+
+            setTimeout(() => {
+                foodShuffleHeader.style.marginBottom = '0';
+            }, 250);
+
+            setTimeout(() => {
+                barContainer.style.display = 'none';
+            }, 300);
+
+           
+
+            
 
 
             var width = 70;
