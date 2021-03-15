@@ -61,10 +61,10 @@ window.onload = () => {
             shuffleContainer.style.transform = 'translateY(100%)';
             showMenu();
 
-            document.documentElement.style.overflowY = 'scroll';
+            document.body.style.overflowY = 'scroll';
         }
 
-        document.documentElement.style.overflowY = 'hidden';
+        document.body.style.overflowY = 'hidden';
 
 
 
