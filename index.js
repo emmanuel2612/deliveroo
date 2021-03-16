@@ -4,7 +4,6 @@ window.onload = () => {
         const splashScreen = document.querySelector('.splash-screen');
         splashScreen.style.display = 'none';
         document.body.style.overflowY = 'scroll';
-        console.log("hello");
     }, 2500);
 
 
@@ -73,61 +72,6 @@ window.onload = () => {
 
 
 
-    // Resataurants Array 
-
-    const resataurants = [
-
-        nandos = {
-            name: 'Nandos',
-            star_rate: 4.4,
-            text_rate: 'Very Good',
-            category1: 'Chicken',
-            category2: 'Burgers',
-            filling: true
-        },
-
-        mcdonalds = {
-            name: "McDonald's",
-            star_rate: 3.8,
-            text_rate: 'Good',
-            category1: 'Chicken',
-            category2: 'Burgers',
-            filling: false
-        },
-
-        subway = {
-            name: "McDonald's",
-            star_rate: 3.8,
-            text_rate: 'Good',
-            category1: 'American',
-            category2: 'Sandwiches',
-            filling: false
-        },
-
-        enish = {
-            name: 'Enish Nigerian',
-            star: 5.0,
-            text_rate: 'Excellent',
-            category1: 'Chicken',
-            category2: 'African',
-            filling: true
-        },
-
-        som_saa = {
-            name: 'Som Saa Thai',
-            star: 4.0,
-            text_rate: 'Very Good',
-            category1: 'Noodles',
-            category2: 'Thai',
-            filling: false
-        }
-
-
-    ]
-
-
-
-
 
     // Quiz 
 
@@ -154,9 +98,7 @@ window.onload = () => {
 
 
 
-    for (let index = 0; index < quizOptionOne.length; index++) {
-
-        quizOptionOne[index].onclick = () => {
+    const changeToSecondQuestion = () => {
 
             questionBoxOne.style.transform = "translateX(-100%)";
 
@@ -174,13 +116,11 @@ window.onload = () => {
                 bar.style.width = width + '%';
 
             }
-        }
-
+    
     }
 
-    for (let index = 0; index < quizOptionTwo.length; index++) {
+    const changeToThirdQuestion = () => {
 
-        quizOptionTwo[index].onclick = () => {
 
             questionBoxTwo.style.transform = "translateX(-200%)";
 
@@ -197,14 +137,10 @@ window.onload = () => {
                 bar.style.width = width + '%';
 
             }
-        }
 
     }
 
-    for (let index = 0; index < quizOptionThree.length; index++) {
-
-
-        quizOptionThree[index].onclick = () => {
+    const changeToLoadingScreen = () => {
 
             questionBoxThree.style.transform = "translateX(-300%)";
             questionBoxContainer.style.transform = "translateX(-300%)";
@@ -227,7 +163,8 @@ window.onload = () => {
             setTimeout(() => {
                 shuffleLoadingContainer.style.display = 'none';
                 restaurantPage.style.display = 'block';
-            }, 5000);
+                randomRestaurant();
+            }, 5000); 
         
 
             setTimeout(() => {
@@ -252,7 +189,6 @@ window.onload = () => {
                 bar.style.width = width + '%';
 
             }
-        }
 
     }
 
@@ -289,13 +225,236 @@ window.onload = () => {
 
 
 
+     // Resataurants Array 
+
+     const restaurants = [
+
+         {
+            name: 'Nandos',
+            star_rate: 4.4,
+            text_rate: 'Very Good',
+            category1: 'Chicken',
+            category2: 'Burgers',
+            filling: 2,
+            spice: 1,
+            price: 2
+        },
+
+        {
+            name: "McDonald's",
+            star_rate: 3.8,
+            text_rate: 'Good',
+            category1: 'Chicken',
+            category2: 'Burgers',
+            filling: 1,
+            spice: 1,
+            price: 2
+        },
+
+        {
+            name: "Subway",
+            star_rate: 3.8,
+            text_rate: 'Good',
+            category1: 'American',
+            category2: 'Sandwiches',
+            filling: 1,
+            spice: 1,
+            price: 1
+        },
+
+        {
+            name: 'Enish Nigerian',
+            star: 5.0,
+            text_rate: 'Excellent',
+            category1: 'Chicken',
+            category2: 'African',
+            filling: 3,
+            spice: 2,
+            price: 3
+        },
+
+        {
+            name: 'Som Saa Thai',
+            star: 4.0,
+            text_rate: 'Very Good',
+            category1: 'Noodles',
+            category2: 'Thai',
+            filling: 1,
+            spice: 1,
+            price: 2
+        },
+
+        {
+            name: 'Hakassan Mayfair',
+            description: 'Founded in 2001, Hakkasan celebrates Cantonese cuisine using traditional techniques and the finest ingredients with a contemporary flair',
+            star: 4.8,
+            text_rate: 'Excellent',
+            category1: 'Chinese',
+            category2: 'Noodles',
+            filling: 1,
+            spice: 2,
+            price: 2
+        },
+
+        {
+            name: 'Joe & The Juice',
+            description: "Joe & The Juice brings the best Scandi-inspired food to your table. Choose from a delish menu including fresh juices, flatbread sandwiches, healthy treats & salads. Remember life's too short for bad vibes or bad food.",
+            star: 4.8,
+            text_rate: 'Excellent',
+            category1: 'Juices',
+            category2: 'Breakfast',
+            filling: 1,
+            spice: 1,
+            price: 1
+        },
+
+        {
+            name: 'Costa Coffee',
+            description: "",
+            star: 4.7,
+            text_rate: 'Excellent',
+            category1: 'Breakfast',
+            category2: 'Coffee',
+            filling: 1,
+            spice: 1,
+            price: 1
+        },
+
+        {
+            name: 'Pret A Manger - Walthamstow',
+            description: "Freshly made food and 100% organic coffee delivered to your door. Order all your Pret favourites for delivery now.",
+            star: 4.8,
+            text_rate: 'Excellent',
+            category1: 'Sandwiches',
+            category2: 'Healthy',
+            filling: 1,
+            spice: 1,
+            price: 1
+        },
+
+        {
+            name: 'Star of India - Leyton',
+            description: "ALLERGIES & INTOLERANCES Please be advised some of our dishes may contain the following Allergens: Please use this key to identify what allergens and ingredients can be found in ourdishes: Gluten (G), Egg (E), Dairy (D), Ghee (GH), Fish (F), Peanuts (P), Almonds (A), Sesame (S), Mustard (M), Sulphites (SU), and Crustaceans (C).Some dishes are suitable for Vegetarians (V) and Vegans (VE). Fish dishes may contain bones.",
+            star: 4.8,
+            text_rate: 'Excellent',
+            category1: 'Curry',
+            category2: 'Indian',
+            filling: 3,
+            spice: 3,
+            price: 2
+        }
+
+
+
+    ] 
+
+    const notSoMuch = document.querySelector('#not-so-much');
+    const hungry = document.querySelector('#hungry');
+    const starving = document.querySelector('#starving');
+
+    const mild = document.querySelector('#mild');
+    const medium = document.querySelector('#medium');
+    const hot = document.querySelector('#hot');
+
+    const price_1 = document.querySelector('#£');
+    const price_2 = document.querySelector('#££');
+    const price_3 = document.querySelector('#£££');
+
+    // Question 1
+
+    notSoMuch.onclick = () => {
+        newRestaurants = restaurants.filter(restaurant => restaurant.filling == 1);
+        console.log(newRestaurants);
+
+        changeToSecondQuestion();
+    }
+
+    hungry.onclick = () => {
+        newRestaurants = restaurants.filter(restaurant => restaurant.filling == 2);
+        console.log(newRestaurants);
+
+        changeToSecondQuestion();
+    }
+
+    starving.onclick = () => {
+        newRestaurants = restaurants.filter(restaurant => restaurant.filling == 3);
+        console.log(newRestaurants);
+
+        changeToSecondQuestion();
+    }
+
+
+    // Question 2 
+
+    mild.onclick = () => {
+        newRestaurants = newRestaurants.filter(restaurant => restaurant.spice == 1);
+        console.log(newRestaurants);
+
+        changeToThirdQuestion();
+    }
+
+    medium.onclick = () => {
+        console.log('medium');
+
+        newRestaurants = newRestaurants.filter(restaurant => restaurant.spice <= 2);
+        console.log(newRestaurants);
+
+        changeToThirdQuestion();
+    }
+
+    hot.onclick = () => {
+        newRestaurants = newRestaurants.filter(restaurant => restaurant.spice <= 3);
+        console.log(newRestaurants);
+
+        changeToThirdQuestion();
+    }
+
+    // Question 3 
+
+    price_1.onclick = () => {
+        newRestaurants = newRestaurants.filter(restaurant => restaurant.price == '1');
+        console.log(newRestaurants);
+
+        changeToLoadingScreen();
+    }
+
+    price_2.onclick = () => {
+        newRestaurants = newRestaurants.filter(restaurant => restaurant.spice == '2');
+        console.log(newRestaurants);
+
+        changeToLoadingScreen();
+    }
+
+    price_3.onclick = () => {
+        newRestaurants = newRestaurants.filter(restaurant => restaurant.spice == '3');
+        console.log(newRestaurants);
+
+        changeToLoadingScreen();
+
+        randomRestaurant();
+    }
 
 
 
 
+ const randomRestaurant = () => {
 
+    let randomRestaurant = newRestaurants[Math.floor(Math.random() * newRestaurants.length)]; /* Gets a random Restaurant object */
+     
+    const randomRestaurantName = document.querySelector('.restaurant-name');
+    const randomRestaurantDescription = document.querySelector('.restaurant-description');
 
+    randomRestaurantName.innerHTML = randomRestaurant.name;
+    randomRestaurantDescription.innerHTML = randomRestaurant.description;
 
+  
+        if (newRestaurants.length < 1){
+            console.log("sorry empty");
+        }
+    
+    console.log(randomRestaurant);
+
+ }
 
 
 
