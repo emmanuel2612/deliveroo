@@ -100,99 +100,99 @@ window.onload = () => {
 
     const changeToSecondQuestion = () => {
 
-            questionBoxOne.style.transform = "translateX(-100%)";
+        questionBoxOne.style.transform = "translateX(-100%)";
 
-            setTimeout(() => {
-                questionBoxOne.style.opacity = "0";
-            }, 20);
+        setTimeout(() => {
+            questionBoxOne.style.opacity = "0";
+        }, 20);
 
 
-            questionBoxTwo.style.transform = "translateX(-100%)";
+        questionBoxTwo.style.transform = "translateX(-100%)";
 
-            var width = 10;
+        var width = 10;
 
-            if (width < 100) {
-                width += 30;
-                bar.style.width = width + '%';
+        if (width < 100) {
+            width += 30;
+            bar.style.width = width + '%';
 
-            }
-    
+        }
+
     }
 
     const changeToThirdQuestion = () => {
 
 
-            questionBoxTwo.style.transform = "translateX(-200%)";
+        questionBoxTwo.style.transform = "translateX(-200%)";
 
-            setTimeout(() => {
-                questionBoxTwo.style.opacity = "0";
-            }, 20);
+        setTimeout(() => {
+            questionBoxTwo.style.opacity = "0";
+        }, 20);
 
-            questionBoxThree.style.transform = "translateX(-200%)";
+        questionBoxThree.style.transform = "translateX(-200%)";
 
-            var width = 40;
+        var width = 40;
 
-            if (width < 100) {
-                width += 30;
-                bar.style.width = width + '%';
+        if (width < 100) {
+            width += 30;
+            bar.style.width = width + '%';
 
-            }
+        }
 
     }
 
     const changeToLoadingScreen = () => {
 
-            questionBoxThree.style.transform = "translateX(-300%)";
-            questionBoxContainer.style.transform = "translateX(-300%)";
+        questionBoxThree.style.transform = "translateX(-300%)";
+        questionBoxContainer.style.transform = "translateX(-300%)";
 
-            setTimeout(() => {
-                questionBoxThree.style.opacity = "0";
-            }, 20);
-
-
-            setTimeout(() => {
-                shuffleLoadingContainer.style.display = 'flex';
-                shuffleLoadingContainer.style.height = '100%';
-                shuffleLoadingContainer.style.flexDirection = 'column';
-                shuffleLoadingContainer.style.alignItems = 'center';
-                shuffleLoadingContainer.style.justifyContent = 'center';
+        setTimeout(() => {
+            questionBoxThree.style.opacity = "0";
+        }, 20);
 
 
-            }, 500);
-
-            setTimeout(() => {
-                shuffleLoadingContainer.style.display = 'none';
-                restaurantPage.style.display = 'block';
-                randomRestaurant();
-            }, 5000); 
-        
-
-            setTimeout(() => {
-                barContainer.style.opacity = '0';
-                foodShuffleContainer.style.paddingBottom = '0';
-
-            }, 20);
-
-            setTimeout(() => {
-                foodShuffleHeader.style.marginBottom = '0';
-            }, 250);
-
-            setTimeout(() => {
-                barContainer.style.display = 'none';
-            }, 300);
+        setTimeout(() => {
+            shuffleLoadingContainer.style.display = 'flex';
+            shuffleLoadingContainer.style.height = '100%';
+            shuffleLoadingContainer.style.flexDirection = 'column';
+            shuffleLoadingContainer.style.alignItems = 'center';
+            shuffleLoadingContainer.style.justifyContent = 'center';
 
 
-            var width = 70;
+        }, 500);
 
-            if (width < 100) {
-                width += 30;
-                bar.style.width = width + '%';
+        setTimeout(() => {
+            shuffleLoadingContainer.style.display = 'none';
+            restaurantPage.style.display = 'block';
+            randomRestaurant();
+        }, 5000);
 
-            }
+
+        setTimeout(() => {
+            barContainer.style.opacity = '0';
+            foodShuffleContainer.style.paddingBottom = '0';
+
+        }, 20);
+
+        setTimeout(() => {
+            foodShuffleHeader.style.marginBottom = '0';
+        }, 250);
+
+        setTimeout(() => {
+            barContainer.style.display = 'none';
+        }, 300);
+
+
+        var width = 70;
+
+        if (width < 100) {
+            width += 30;
+            bar.style.width = width + '%';
+
+        }
 
     }
 
-    
+
 
 
 
@@ -211,25 +211,25 @@ window.onload = () => {
             loadingTextElement.classList.remove('hide');
             counter++;
 
-            if (counter >= loadingText.length){
+            if (counter >= loadingText.length) {
                 counter = 0;
             }
-            
+
         }, 500);
     }
 
     setInterval(change, 2500);
-    
 
 
 
 
 
-     // Resataurants Array 
 
-     const restaurants = [
+    // Resataurants Array 
 
-         {
+    const restaurants = [
+
+        {
             name: 'Nandos',
             star_rate: 4.4,
             text_rate: 'Very Good',
@@ -346,7 +346,7 @@ window.onload = () => {
 
 
 
-    ] 
+    ]
 
     const notSoMuch = document.querySelector('#not-so-much');
     const hungry = document.querySelector('#hungry');
@@ -437,24 +437,59 @@ window.onload = () => {
 
 
 
- const randomRestaurant = () => {
+    const randomRestaurant = () => {
 
-    let randomRestaurant = newRestaurants[Math.floor(Math.random() * newRestaurants.length)]; /* Gets a random Restaurant object */
-     
-    const randomRestaurantName = document.querySelector('.restaurant-name');
-    const randomRestaurantDescription = document.querySelector('.restaurant-description');
+        let randomRestaurant = newRestaurants[Math.floor(Math.random() * newRestaurants.length)]; /* Gets a random Restaurant object */
 
-    randomRestaurantName.innerHTML = randomRestaurant.name;
-    randomRestaurantDescription.innerHTML = randomRestaurant.description;
+        const randomRestaurantName = document.querySelector('.restaurant-name');
+        const randomRestaurantDescription = document.querySelector('.restaurant-description');
 
-  
-        if (newRestaurants.length < 1){
+        randomRestaurantName.innerHTML = randomRestaurant.name;
+        randomRestaurantDescription.innerHTML = randomRestaurant.description;
+
+
+        if (newRestaurants.length < 1) {
             console.log("sorry empty");
         }
-    
-    console.log(randomRestaurant);
 
- }
+        console.log(randomRestaurant);
+
+    }
+
+
+
+
+
+
+
+
+
+
+    // Table Booking
+    
+
+    const availableTables = document.querySelectorAll('.available');
+
+for (let index = 0; index < availableTables.length; index++) {
+  availableTables[index].onclick = () => {
+
+    if (availableTables[index].classList.contains('active')) {
+      availableTables[index].classList.remove('active');
+      return;
+    }
+
+    if (document.getElementsByClassName('active').length < 3) {
+      availableTables[index].classList.add('active');
+    }
+  }
+}
+
+
+
+
+
+
+
 
 
 
