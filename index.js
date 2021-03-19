@@ -466,23 +466,23 @@ window.onload = () => {
 
 
     // Table Booking
-    
+
 
     const availableTables = document.querySelectorAll('.available');
 
-for (let index = 0; index < availableTables.length; index++) {
-  availableTables[index].onclick = () => {
+    for (let index = 0; index < availableTables.length; index++) {
+        availableTables[index].onclick = () => {
 
-    if (availableTables[index].classList.contains('active')) {
-      availableTables[index].classList.remove('active');
-      return;
-    }
+            if (availableTables[index].classList.contains('active')) {
+                availableTables[index].classList.remove('active');
+                return;
+            }
 
-    if (document.getElementsByClassName('active').length < 3) {
-      availableTables[index].classList.add('active');
+            if (document.getElementsByClassName('active').length < 3) {
+                availableTables[index].classList.add('active');
+            }
+        }
     }
-  }
-}
 
 
 
