@@ -66,6 +66,8 @@ window.onload = () => {
         document.body.style.overflow = 'hidden';
         document.documentElement.style.overflow = 'hidden';
 
+       
+
 
     }
 
@@ -189,6 +191,8 @@ window.onload = () => {
             bar.style.width = width + '%';
 
         }
+
+
 
     }
 
@@ -453,6 +457,7 @@ window.onload = () => {
         }
 
         console.log(randomRestaurant);
+
 
     }
 
