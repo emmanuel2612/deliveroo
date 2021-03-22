@@ -63,12 +63,6 @@ window.onload = () => {
         }
 
 
-        document.body.style.overflow = 'hidden';
-        document.documentElement.style.overflow = 'hidden';
-
-       
-
-
     }
 
 
@@ -95,6 +89,7 @@ window.onload = () => {
 
     const restaurantPage = document.querySelector('.restaurant-page');
 
+    const main = document.querySelector('.main');
 
 
 
@@ -147,6 +142,7 @@ window.onload = () => {
         questionBoxThree.style.transform = "translateX(-300%)";
         questionBoxContainer.style.transform = "translateX(-300%)";
 
+
         setTimeout(() => {
             questionBoxThree.style.opacity = "0";
         }, 20);
@@ -158,13 +154,14 @@ window.onload = () => {
             shuffleLoadingContainer.style.flexDirection = 'column';
             shuffleLoadingContainer.style.alignItems = 'center';
             shuffleLoadingContainer.style.justifyContent = 'center';
-
-
+            questionBoxContainer.style.display = "none";
         }, 500);
 
         setTimeout(() => {
             shuffleLoadingContainer.style.display = 'none';
             restaurantPage.style.display = 'block';
+            foodShuffleContainer.style.height = 'auto';
+            main.style.display = 'none';
             randomRestaurant();
         }, 5000);
 
@@ -191,8 +188,6 @@ window.onload = () => {
             bar.style.width = width + '%';
 
         }
-
-
 
     }
 
@@ -457,7 +452,6 @@ window.onload = () => {
         }
 
         console.log(randomRestaurant);
-
 
     }
 
