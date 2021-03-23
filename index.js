@@ -286,6 +286,7 @@ window.onload = () => {
         {
             name: 'Hakassan Mayfair',
             description: 'Founded in 2001, Hakkasan celebrates Cantonese cuisine using traditional techniques and the finest ingredients with a contemporary flair',
+            image: 'url("../images/hakkasan.jpeg")',
             star: 4.8,
             text_rate: 'Excellent',
             category1: 'Chinese',
@@ -442,9 +443,11 @@ window.onload = () => {
 
         const randomRestaurantName = document.querySelector('.restaurant-name');
         const randomRestaurantDescription = document.querySelector('.restaurant-description');
+        const randomRestaurantImage = document.querySelector('.restaurant-image');
 
         randomRestaurantName.innerHTML = randomRestaurant.name;
         randomRestaurantDescription.innerHTML = randomRestaurant.description;
+        randomRestaurantImage.style.backgroundImage = randomRestaurant.image;
 
 
         if (newRestaurants.length < 1) {
