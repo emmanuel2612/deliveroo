@@ -286,7 +286,7 @@ window.onload = () => {
         {
             name: 'Hakassan Mayfair',
             description: 'Founded in 2001, Hakkasan celebrates Cantonese cuisine using traditional techniques and the finest ingredients with a contemporary flair',
-            image: 'url("../images/hakkasan.jpeg")',
+            image: 'url("images/hakkasan.jpeg")',
             star: 4.8,
             text_rate: 'Excellent',
             category1: 'Chinese',
