@@ -287,8 +287,7 @@ window.onload = () => {
             name: 'Hakassan Mayfair',
             description: 'Founded in 2001, Hakkasan celebrates Cantonese cuisine using traditional techniques and the finest ingredients with a contemporary flair',
             image: 'url("images/hakkasan.jpeg")',
-            star: 4.8,
-            text_rate: 'Excellent',
+            rate: '4.3 Very Good',
             category1: 'Chinese',
             category2: 'Noodles',
             filling: 1,
@@ -444,11 +443,16 @@ window.onload = () => {
         const randomRestaurantName = document.querySelector('.restaurant-name');
         const randomRestaurantDescription = document.querySelector('.restaurant-description');
         const randomRestaurantImage = document.querySelector('.restaurant-image');
+        const randomRestaurantRate = document.querySelector('.restaurant-rate');
+        const randomRestaurantCategory1 = document.querySelector('.category-1');
+        const randomRestaurantCategory2 = document.querySelector('.category-2');
 
         randomRestaurantName.innerHTML = randomRestaurant.name;
         randomRestaurantDescription.innerHTML = randomRestaurant.description;
         randomRestaurantImage.style.backgroundImage = randomRestaurant.image;
-
+        randomRestaurantRate.innerHTML = randomRestaurant.rate;
+        randomRestaurantCategory1.innerHTML = randomRestaurant.category1;
+        randomRestaurantCategory2.innerHTML = randomRestaurant.category2;
 
         if (newRestaurants.length < 1) {
             console.log("sorry empty");
